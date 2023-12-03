@@ -11,7 +11,9 @@ st.write("### Enter the city name, choose a Temperature unit and a graph type fr
 
 with open('settings.json', 'w') as f:
     default_location = st.text_input('Your default location: ')
-    location = st.text-input('What is you actual location?')
+        if default_location:
+            st.write(f'Your location by default is: '{default_location)
+    location = st.text_input('What is you actual location?')
     if location == "":
         location = default_location
     json.dump(location , f)
