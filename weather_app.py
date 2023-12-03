@@ -11,7 +11,7 @@ st.write("### Enter the city name, choose a Temperature unit and a graph type fr
 
 options = ['marseille', 'lyon', 'jerusalem', 'paris', 'tel-aviv', 'natanya', 'london', 'new york']
 user_input = ''
-input_message= st.text_input("Pick an option in this list of locations:\n")
+input_message= st.selectbox("Pick an option in this list of locations:\n",options)
 
 for index, item in enumerate(options):
     input_message += f'{index+1}) {item}\n'
