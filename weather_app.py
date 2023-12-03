@@ -32,7 +32,7 @@ with open('settings.json', 'w') as f:
         location = default_location
         st.write(f'Your location is: {default_location}')
     else:
-        st.write(f'Your location is: {location}'
+        st.write(f'Your location is: {location}')
 
     unit_chosen = st.selectbox("Select Temperature Unit: ", ('celsius', 'fahrenheit'))
     json.dump(location , f)
@@ -42,7 +42,7 @@ with open('settings.json', 'w') as f:
     response_weatherzone=weatherzone.json()
     json.dump(response_weatherzone , f)
 
-        humidity=response_weatherzone['main']['humidity']
+    humidity=response_weatherzone['main']['humidity']
     st.write(f"### 💧 Humidity: {humidity}%")
     
     pressure=response_weatherzone['main']['pressure']
