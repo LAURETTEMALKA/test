@@ -33,6 +33,32 @@ with open('settings.json', 'w') as f:
         st.write(f'Your location is: {default_location}')
     else:
         st.write(f'Your location is: {location}')
+        obs = mgr.weather_at_place(location)
+    
+    weather = obs.weather
+    icon = weather.weather_icon_url(size='4x')
+
+    temp = weather.temperature(unit=units)['temp']
+    temp_felt = weather.temperature(unit=units)['feels_like']
+    st.image(icon, caption= (weather.detailed_status).title())
+    st.markdown(f"## 🌡️ Temperature: **{round(temp)}{sign}{degree}**")
+    st.write(f"### Feels Like: {round(temp_felt)}{sign}{degree}")
+
+    cloud = weather.clouds
+    st.write(f"### ☁️ Clouds Coverage: {cloud}%")
+
+    wind = weather.wind()['speed']
+    st.write(f"### 💨 Wind Speed: {wind}m/s")
+
+    humidity = weather.humidity
+    st.write(f"### 💧 Humidity: {humidity}%")
+
+    pressure = weather.pressure['press']
+    st.write(f"### ⏲️ Pressure: {pressure}mBar")
+
+    visibility = weather.visibility(unit='kilometers')
+    st.write(f"### 🛣️ Visibility: {visibility}km")
+
     unit_chosen = st.selectbox("Select Temperature Unit: ", ('celsius', 'fahrenheit'))
     json.dump(location , f)
     API = 'e1313973fe262c3c18b4500d98fe65eb'
