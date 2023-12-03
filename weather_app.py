@@ -28,6 +28,8 @@ list_of_favorites_locations.append(choice4)
 choice5= st.selectbox('Your choice 5 : ',options)
 list_of_favorites_locations.append(choice5)
 
+st.write(list_of_favorites_locations)
+
 while user_input.lower() not in options:
     print(f'"{user_input}" not in the list')
     user_input = st.text_input(input_message)
