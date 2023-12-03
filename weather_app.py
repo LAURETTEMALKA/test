@@ -5,7 +5,7 @@ import streamlit as st
 api_key = 'e1313973fe262c3c18b4500d98fe65eb'
 
 st.title("Weather Forecaster")
-st.write("## *Made by Akash with* :heart:")
+st.write("## *Made by Laurette*")
 st.write("##")
 
 st.write("### Enter the city name, choose a Temperature unit and a graph type from the bottom:")
