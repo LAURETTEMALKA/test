@@ -4,7 +4,6 @@ import streamlit as st
 import json
 
 API_KEY = 'e1313973fe262c3c18b4500d98fe65eb'
-api_key = st.secrets["API_KEY"]
 
 
 sign = u"\N{DEGREE SIGN}"
@@ -26,7 +25,7 @@ units = st.selectbox("Select Temperature Unit: ", ('celsius', 'fahrenheit'))
 url = f"https://api.openweathermap.org/data/2.5/weather?appid={api_key}&q={city}&units={units}"
 
 def weather_():
-    """ Show the current weather ."""
+    """ Show the current weather """
 
     obs = mgr.weather_at_place(location)
     weather = obs.weather
