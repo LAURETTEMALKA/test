@@ -13,7 +13,7 @@ st.write("##")
 st.write("### Enter the city name, choose a Temperature unit and a graph type from the bottom:")
 
 city_by_default = st.text_input("What is your default location? ")
-city_chosen = st.text_input("Name of The City :") or "city_by_default"
+city_chosen = st.text_input("Name of The City :") or city_by_default
 units = st.selectbox("Select Temperature Unit: ", ('celsius', 'fahrenheit'))
 
 
