@@ -3,11 +3,10 @@ import requests
 import streamlit as st
 import json
 
-API_KEY = 'e1313973fe262c3c18b4500d98fe65eb'
+api_key = 'e1313973fe262c3c18b4500d98fe65eb'
 
 
 sign = u"\N{DEGREE SIGN}"
-owm = pyowm.OWM(api_key)
 mgr = owm.weather_manager()
 
 st.title("Today'\s Weather")
