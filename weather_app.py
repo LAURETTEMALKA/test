@@ -33,6 +33,19 @@ with open('settings.json', 'w') as f:
         st.write(f'Your location is: {default_location}')
     else:
         st.write(f'Your location is: {location}')
+
+    humidity=response_weatherzone['main']['humidity']
+    st.write(f"### 💧 Humidity: {humidity}%")
+    
+    pressure=response_weatherzone['main']['pressure']
+    st.write(f"### ⏲️ Pressure: {pressure}mBar")
+    
+    wind=response_weatherzone['wind']['speed']
+    st.write(f"### 💨 Wind Speed: {wind}m/s")
+    
+    description=response_weatherzone['weather'][0]['description']
+    
+    temp=response_weatherzone['main']['temp']
     
     obs = mgr.weather_at_place(location)
     weather = obs.weather
