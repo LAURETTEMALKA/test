@@ -20,26 +20,26 @@ list_of_favorites_locations = []
 
 options = ['marseille', 'lyon', 'jerusalem', 'paris', 'tel-aviv', 'natanya', 'london', 'new york']
 user_input = ''
-input_message = "Pick an option in this list of locations:\n"
+inpu_message= st.text_input("Pick an option in this list of locations:\n")
 
 for index, item in enumerate(options):
     input_message += f'{index+1}) {item}\n'
 
 input_message += 'Your choice 1 : '
-user_input = input(input_message)
+user_input =st.text_input(input_message)
 
 while user_input.lower() not in options:
     print(f'"{user_input}" not in the list')
-    user_input = input(input_message)
+    user_input = st.text_input(input_message)
     list_of_favorites_locations.append(user_input)
 
 
 for i in range(4):
     input_message = f'Your choice {i+2} : '
-    user_input = input(input_message)
+    user_input = st.text_input(input_message)
     while user_input.lower() not in options:
         print(f'"{user_input}" not in the list')
-        user_input = input(input_message)
+        user_input = st.text_input(input_message)
     list_of_favorites_locations.append(user_input)
     
 print(list_of_favorites_locations)
