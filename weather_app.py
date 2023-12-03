@@ -29,7 +29,7 @@ choice5= st.selectbox('Your choice 5 : ',options)
 list_of_favorites_locations.append(choice5)
 
 if choice5:
-    st.write(f"Your favorite locations are:" {list_of_favorites_locations})
+    st.write("Your favorite locations are:", list_of_favorites_locations)
 
 while user_input.lower() not in options:
     print(f'"{user_input}" not in the list')
