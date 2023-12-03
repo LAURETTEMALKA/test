@@ -10,7 +10,7 @@ st.write("##")
 
 city= st.write("### Enter the city name, choose a Temperature unit and a graph type from the bottom:")
 
-city_chosen = st.test_input("Name of The City :", "" ,('jerusalem'))
+city_chosen = st.test_input("Name of The City :", "" )
 units = st.selectbox("Select Temperature Unit: ", ('celsius', 'fahrenheit'))
 graph = st.selectbox("Select Graph Type:", ('Bar Graph', 'Line Graph'))
 
