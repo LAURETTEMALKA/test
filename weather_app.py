@@ -11,13 +11,13 @@ st.write("##")
 city= st.write("### Enter the city name, choose a Temperature unit and a graph type from the bottom:")
 
 city_chosen = st.selectbox("Name of The City :", ('jerusalem','city')
-unit = st.selectbox("Select Temperature Unit: ", ('celsius', 'fahrenheit'))
+units = st.selectbox("Select Temperature Unit: ", ('celsius', 'fahrenheit'))
 graph = st.selectbox("Select Graph Type:", ('Bar Graph', 'Line Graph'))
 
 
 
 
-url = f"https://api.openweathermap.org/data/2.5/weather?appid={api_key}&q={city}&units={unit}"
+url = f"https://api.openweathermap.org/data/2.5/weather?appid={api_key}&q={city}&units={units}"
 
 response = requests.get(url)
 
