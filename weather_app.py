@@ -9,15 +9,6 @@ st.write("##")
 
 st.write("### Enter the city name, choose a Temperature unit and a graph type from the bottom:")
 
-with open('settings.json', 'w') as f:
-    default_location = input('Your default location: ')
-    location = user_input
-    if location == "":
-        location = default_location
-    json.dump(location , f)
-    json.dump(response_weatherzone , f)
-list_of_favorites_locations = []
-
 options = ['marseille', 'lyon', 'jerusalem', 'paris', 'tel-aviv', 'natanya', 'london', 'new york']
 user_input = ''
 input_message= st.text_input("Pick an option in this list of locations:\n")
