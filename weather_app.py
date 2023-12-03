@@ -10,6 +10,10 @@ st.write("##")
 st.write("### Enter the city name, choose a Temperature unit and a graph type from the bottom:")
 
 with open('settings.json', 'w') as f:
+
+    default_location = st.text_input('Your default location: ')
+    if default_location:
+        st.write(f'Your location by default is: {default_location}')
     options = ['marseille', 'lyon', 'jerusalem', 'paris', 'tel-aviv', 'natanya', 'london', 'new york']
     list_of_favorites_locations = []
     st.write("you have to select 5 favorite location in this list")
@@ -22,10 +26,7 @@ with open('settings.json', 'w') as f:
     choice4= st.selectbox('Your choice 4 : ',options)
     list_of_favorites_locations.append(choice4)
     choice5= st.selectbox('Your choice 5 : ',options)
-    list_of_favorites_locations.append(choice5)
-    default_location = st.text_input('Your default location: ')
-    if default_location:
-        st.write(f'Your location by default is: {default_location}')
+    list_of_favorites_locations.append(choice5)  
     location = st.selectbox('What is you actual location?',list_of_favorites_locations)
     if location == "":
         location = default_location
