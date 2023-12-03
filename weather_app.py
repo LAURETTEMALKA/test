@@ -10,14 +10,23 @@ st.write("##")
 st.write("### Enter the city name, choose a Temperature unit and a graph type from the bottom:")
 
 options = ['marseille', 'lyon', 'jerusalem', 'paris', 'tel-aviv', 'natanya', 'london', 'new york']
-user_input = ''
-input_message= st.selectbox("Pick an option in this list of locations:\n",options)
+#user_input = ''
+#input_message= st.selectbox("Pick an option in this list of locations:\n",options)
 
-for index, item in enumerate(options):
-    input_message += f'{index+1}) {item}\n'
 
-input_message += 'Your choice 1 : '
-user_input =st.text_input(input_message)
+list_of_favorites_locations = []
+st.write("you have to select 5 favorite location in this list")
+
+choice1= st.selectbox('Your choice 1 : ',options)
+list_of_favorites_locations.append(choice1)
+choice2= st.selectbox('Your choice 2 : ',options)
+list_of_favorites_locations.append(choice2)
+choice3= st.selectbox('Your choice 3 : ',options)
+list_of_favorites_locations.append(choice3)
+choice4= st.selectbox('Your choice 4 : ',options)
+list_of_favorites_locations.append(choice4)
+choice5= st.selectbox('Your choice 5 : ',options)
+list_of_favorites_locations.append(choice5)
 
 while user_input.lower() not in options:
     print(f'"{user_input}" not in the list')
