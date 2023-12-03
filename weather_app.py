@@ -23,7 +23,7 @@ with open('settings.json', 'w') as f:
     json.dump(location , f)
     API = 'e1313973fe262c3c18b4500d98fe65eb'
     url=f"https://api.openweathermap.org/data/2.5/weather?appid={API}&q={location}&units={unit_chosen}"
-    weatherzone= rq.get(url)
+    weatherzone= requests.get(url)
     response_weatherzone=weatherzone.json()
     json.dump(response_weatherzone , f)
 
