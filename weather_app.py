@@ -33,8 +33,8 @@ with open('settings.json', 'w') as f:
         st.write(f'Your location is: {default_location}')
     else:
         st.write(f'Your location is: {location}')
-        obs = mgr.weather_at_place(location)
     
+    obs = mgr.weather_at_place(location)
     weather = obs.weather
     icon = weather.weather_icon_url(size='4x')
 
