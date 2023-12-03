@@ -32,9 +32,17 @@ with open('settings.json', 'w') as f:
         location = default_location
         st.write(f'Your location is: {default_location}')
     else:
-        st.write(f'Your location is: {location}')
+        st.write(f'Your location is: {location}'
 
-    humidity=response_weatherzone['main']['humidity']
+    unit_chosen = st.selectbox("Select Temperature Unit: ", ('celsius', 'fahrenheit'))
+    json.dump(location , f)
+    API = 'e1313973fe262c3c18b4500d98fe65eb'
+    url=f"https://api.openweathermap.org/data/2.5/weather?appid={API}&q={location}&units={unit_chosen}"
+    weatherzone= requests.get(url)
+    response_weatherzone=weatherzone.json()
+    json.dump(response_weatherzone , f)
+
+        humidity=response_weatherzone['main']['humidity']
     st.write(f"### 💧 Humidity: {humidity}%")
     
     pressure=response_weatherzone['main']['pressure']
@@ -71,13 +79,5 @@ with open('settings.json', 'w') as f:
 
     visibility = weather.visibility(unit='kilometers')
     st.write(f"### 🛣️ Visibility: {visibility}km")
-
-    unit_chosen = st.selectbox("Select Temperature Unit: ", ('celsius', 'fahrenheit'))
-    json.dump(location , f)
-    API = 'e1313973fe262c3c18b4500d98fe65eb'
-    url=f"https://api.openweathermap.org/data/2.5/weather?appid={API}&q={location}&units={unit_chosen}"
-    weatherzone= requests.get(url)
-    response_weatherzone=weatherzone.json()
-    json.dump(response_weatherzone , f)
 
 
