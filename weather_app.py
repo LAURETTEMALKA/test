@@ -16,8 +16,13 @@ with open('settings.json', 'w') as f:
     location = st.text_input('What is you actual location?')
     if location == "":
         location = default_location
+        st.write(f'Your location is: {default_location}')
+    else:
+        st.write(f'Your location is: {location}')
     json.dump(location , f)
     json.dump(response_weatherzone , f)
+
+
 options = ['marseille', 'lyon', 'jerusalem', 'paris', 'tel-aviv', 'natanya', 'london', 'new york']
 #user_input = ''
 #input_message= st.selectbox("Pick an option in this list of locations:\n",options)
