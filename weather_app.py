@@ -52,32 +52,23 @@ with open('settings.json', 'w') as f:
     st.write(f"### 💨 Wind Speed: {wind}m/s")
     
     description=response_weatherzone['weather'][0]['description']
+    st.write(f"Description:{description}")
+    
+    if unit_chosen='celsius':
+        unit_temp='°C'
+    else:
+        unit_temp='°F'
     
     temp=response_weatherzone['main']['temp']
+    st.write(f"Temperature:{temp}{unit_temp}")
     
-    obs = mgr.weather_at_place(location)
-    weather = obs.weather
-    icon = weather.weather_icon_url(size='4x')
 
-    temp = weather.temperature(unit=units)['temp']
-    temp_felt = weather.temperature(unit=units)['feels_like']
+    icon = response_weatherzone.weather_icon_url(size='4x')
+
     st.image(icon, caption= (weather.detailed_status).title())
     st.markdown(f"## 🌡️ Temperature: **{round(temp)}{sign}{degree}**")
     st.write(f"### Feels Like: {round(temp_felt)}{sign}{degree}")
 
-    cloud = weather.clouds
-    st.write(f"### ☁️ Clouds Coverage: {cloud}%")
 
-    wind = weather.wind()['speed']
-    st.write(f"### 💨 Wind Speed: {wind}m/s")
-
-    humidity = weather.humidity
-    st.write(f"### 💧 Humidity: {humidity}%")
-
-    pressure = weather.pressure['press']
-    st.write(f"### ⏲️ Pressure: {pressure}mBar")
-
-    visibility = weather.visibility(unit='kilometers')
-    st.write(f"### 🛣️ Visibility: {visibility}km")
 
 
