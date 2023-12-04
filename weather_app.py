@@ -3,7 +3,7 @@ import requests
 import streamlit as st
 import json
 
-st.title("Today'\s Weather")
+st.title("Today's Weather")
 st.write("## *Made by Laurette*")
 st.write("##")
 
