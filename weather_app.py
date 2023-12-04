@@ -52,7 +52,7 @@ with open('settings.json', 'w') as f:
     st.write(f"### 💨 Wind Speed: {wind}m/s")
     
     description=response_weatherzone['weather'][0]['description']
-    st.write(f"Description:{description}")
+    st.write(f"### Description: {description}")
     
     if unit_chosen=='celsius':
         unit_temp='°C'
@@ -60,7 +60,7 @@ with open('settings.json', 'w') as f:
         unit_temp='°F'
     
     temp=response_weatherzone['main']['temp']
-    st.write(f"Temperature:{temp}{unit_temp}")
+    st.write(f"### Temperature:{temp}{unit_temp}")
     
 
     icon = response_weatherzone.weather_icon_url(size='4x')
