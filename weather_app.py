@@ -54,7 +54,7 @@ with open('settings.json', 'w') as f:
     description=response_weatherzone['weather'][0]['description']
     st.write(f"Description:{description}")
     
-    if unit_chosen='celsius':
+    if unit_chosen=='celsius':
         unit_temp='°C'
     else:
         unit_temp='°F'
