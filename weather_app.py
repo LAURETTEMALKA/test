@@ -42,9 +42,6 @@ with open('settings.json', 'w') as f:
     response_weatherzone=weatherzone.json()
     json.dump(response_weatherzone , f)
 
-    cloud = response_weatherzone['main']['clouds']
-    st.write(f"### ☁️ Clouds Coverage: {cloud}%")
-
     humidity=response_weatherzone['main']['humidity']
     st.write(f"### 💧 Humidity: {humidity}%")
     
@@ -53,7 +50,6 @@ with open('settings.json', 'w') as f:
     
     wind=response_weatherzone['wind']['speed']
     st.write(f"### 💨 Wind Speed: {wind}m/s")
-
     
     description=response_weatherzone['weather'][0]['description']
     
